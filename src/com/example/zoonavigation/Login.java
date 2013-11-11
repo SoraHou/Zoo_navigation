@@ -32,6 +32,7 @@ public class Login extends Activity {
 
 	// Define widget
 	private Button login;
+	private Button reg;
 //	private Button clear;
 	private EditText username;
 	private EditText password;
@@ -56,8 +57,8 @@ public class Login extends Activity {
 //		clear.setOnClickListener(onClickClear);
 		login.setOnClickListener(onClickLogin);
 
-		GPSCheck();
-		dirCheck();
+		 GPSCheck();
+		//dirCheck();
 
 		
 		loading = new ProgressDialog(Login.this);
@@ -80,27 +81,10 @@ public class Login extends Activity {
 		username = (EditText) findViewById(R.id.editText2);
 	}
 
-	// Check GPS
-	private void GPSCheck() {
-		LocationManager status = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-
-		if (!status.isProviderEnabled(LocationManager.GPS_PROVIDER) || !status.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-			startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-			Toast.makeText(Login.this, "請開啟GPS", Toast.LENGTH_LONG).show();
-		}
-		
-	}
 	
-	// Check Network
-	private boolean NetworkCheck() {
-		ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo ni = cm.getActiveNetworkInfo();
-		
-		return ni != null && ni.isConnected();
-	}
 
 	// Check and Create Directory
-	private void dirCheck() {
+	/*private void dirCheck() {
 		if (Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
 			File SDCard = Environment.getExternalStorageDirectory();
@@ -108,7 +92,7 @@ public class Login extends Activity {
 			if (!dirPath.exists())
 				dirPath.mkdirs();
 		}
-	}
+	}*/
 
 	// Clear Username and Password
 	/*private Button.OnClickListener onClickClear = new Button.OnClickListener() {
@@ -123,7 +107,27 @@ public class Login extends Activity {
 		}
 
 	};*/
+	private void GPSCheck() {
+		LocationManager status = (LocationManager) this
+				.getSystemService(Context.LOCATION_SERVICE);
 
+		if (!status.isProviderEnabled(LocationManager.GPS_PROVIDER)
+				|| !status.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+			Toast.makeText(Login.this, "請開啟GPS", Toast.LENGTH_LONG)
+					.show();
+		}
+
+	}
+
+	// Check Network
+	private boolean NetworkCheck() {
+		ConnectivityManager cm = (ConnectivityManager) this
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo ni = cm.getActiveNetworkInfo();
+
+		return ni != null && ni.isConnected();
+	}
 	// Login
 	private Handler loginHandler = new Handler() {
 		

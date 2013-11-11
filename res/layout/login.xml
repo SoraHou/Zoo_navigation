@@ -82,4 +82,13 @@
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
+    <Button
+        android:id="@+id/reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_toLeftOf="@+id/button1"
+        android:text="會員註冊" />
+
 </RelativeLayout>
