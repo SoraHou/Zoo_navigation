@@ -56,7 +56,7 @@ public class Login extends Activity {
 		// Set default behavior
 //		clear.setOnClickListener(onClickClear);
 		login.setOnClickListener(onClickLogin);
-
+		reg.setOnClickListener(onClickReg);
 		 GPSCheck();
 		//dirCheck();
 
@@ -76,6 +76,7 @@ public class Login extends Activity {
 
 	private void initWidget() {
 		login = (Button) findViewById(R.id.button1);
+		reg = (Button) findViewById(R.id.button2);
 //		clear = (Button) findViewById(R.id.button2);
 		password = (EditText) findViewById(R.id.editText1);
 		username = (EditText) findViewById(R.id.editText2);
@@ -203,5 +204,16 @@ public class Login extends Activity {
 		}
 
 	};
+	private Button.OnClickListener onClickReg = new Button.OnClickListener() {
+
+		public void onClick(View v) {
+			Intent intent = new Intent(); // intent實體化
+			intent.setClass(Login.this, NavigationPage.class);
+			startActivity(intent); // startActivity觸發換頁
+			finish(); // 換頁後結束此頁
+		}
+
+	};
+
 
 }

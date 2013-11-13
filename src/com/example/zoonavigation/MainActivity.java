@@ -71,7 +71,7 @@ public class MainActivity extends Activity {
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
-						
+			
 						Intent intent = new Intent(); // intent實體化
 						intent.setClass(MainActivity.this, NavigationPage.class);
 						startActivity(intent); // startActivity觸發換頁

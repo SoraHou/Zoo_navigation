@@ -1,8 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignParentLeft="true"
+        android:text="密   碼" 
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_alignParentLeft="true"
+        android:text="密碼確認" 
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@+id/textView3"
+        android:ems="10"
+        android:inputType="textPassword" 
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:inputType="textPassword" 
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:inputType="textPersonName" 
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText2"
+        android:layout_alignRight="@+id/textView2"
+        android:text="帳     號"
+        android:textSize="16sp" />
+
+</RelativeLayout>
